@@ -1,5 +1,7 @@
 export_fig
 ==========
+!!!https://www.mathworks.com/matlabcentral/fileexchange/23629-export_fig
+!!!https://www.mathworks.com/matlabcentral/fileexchange/25471-maximize (This function maximizes MATLAB figures on any platform, and any version of MATLAB at least as far back as 7.0 (possibly further). It takes a figure handle as input. Note: it doesn't simply resize the figure to fill the screen.)
 
 A toolbox for exporting figures from MATLAB to standard image and document formats nicely.
 
