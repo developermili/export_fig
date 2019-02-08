@@ -1,0 +1,45 @@
+msize = 25;
+fsize = 45;
+lwidth = 5;
+color1=[4/255 51/255 112/255]; %dark blue
+color2=[163/255 43/255 92/255]; %red
+color3=[93/255 118/255 186/255]; %purple blue
+color4=[61/255 145/255 204/255]; %purple
+color5=[210/255 73/255 42/255]; %Mines Orange
+color6=[38/255 63/255 106/255]; %Mines Dark Blue
+color7=[0/255 95/255 88/255]; %dark green
+color8=[55/255 105/255 86/255]; %dark green2
+color9=[35/255 109/255 86/255]; %light green
+color10=[140/255 101/255 124/255]; %dark purple
+
+skip=1;
+maxrange=100;
+hold on;
+plot(x(1:skip:maxrange), m1(1:skip:maxrange),  '-.', 'color',color1, 'LineWidth', lwidth); %, 'Marker','s','MarkerSize', msize);
+plot(x(1:skip:maxrange), m2(1:skip:maxrange),  '--', 'color',color2,'LineWidth', lwidth); %, 'Marker','*','MarkerSize', msize);
+plot(x(1:skip:maxrange), m3(1:skip:maxrange),  ':.', 'color',color3,'LineWidth', lwidth); %, 'Marker','o','MarkerSize', msize);
+% plot(x(1:skip:maxrange), m4(1:skip:maxrange),  'color',color4,'LineWidth', lwidth); %, 'Marker','x','MarkerSize', msize);
+plot(x(1:skip:maxrange), m5(1:skip:maxrange),  '-', 'color',color5,'LineWidth', lwidth); %, 'Marker','v','MarkerSize', msize);
+ylim([0.1,1.001])
+hold off;
+ylim([0.0, 1.0]);
+
+%[254/255 90/255 39/255]
+xlabel('Timeslots (t)', 'FontSize', fsize);
+ylabel('CDF', 'FontSize', fsize);
+set(gca, 'FontSize', fsize);
+
+%CDF vs m
+% h = legend('m=1','m=3','m=5','location','SE');
+% h = legend('m=1','m=2','m=3','m=4','m=5','location','SE');
+% h = legend('m=1','m=2','m=3','m=5','location','SE');
+%set(h, 'FontSize', 20);
+
+set(gcf, 'Color', 'w');
+maximize;
+pause(.5);
+h = legendflex(gca, {'m=1','m=2','m=3','m=5'},'anchor', {'e','e'}, 'xscale', 2.5);
+pause(.5);
+%CDF vs m
+export_fig 'CDF_m' -pdf
+%export_fig 'CDF_m' -eps
