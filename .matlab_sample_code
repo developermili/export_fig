@@ -43,3 +43,7 @@ pause(.5);
 %CDF vs m
 export_fig 'CDF_m' -pdf
 %export_fig 'CDF_m' -eps
+
+export_fig(figname,'-transparent','-append')
+export_fig(sprintf('plot%d', a), '-a1', '-pdf', '-png');
+%https://www.mathworks.com/matlabcentral/answers/230049-variable-string-as-filename-using-export_fig
